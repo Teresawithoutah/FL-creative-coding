@@ -35,11 +35,22 @@ void draw() {
   if (mousePressed) {
     // draw a rectangle with a small random variation in size
     stroke(0); // set the stroke colour to a white
-    fill(255, 150); // set the fill colour to whitewith transparency
+    fill(102,108,239,150); // set the fill colour to white with transparency
     rect(mouseX, mouseY, random(6), random(6));
   }
-
-
+  if (mousePressed && keyPressed == true && key=='m'){
+   stroke(0); // set the stroke colour to a white
+    fill(00,255, 0,150); // set the fill colour to lime with transparency
+    rect(mouseX, mouseY, random(6), random(6));
+  } 
+  
+   if (mousePressed && keyPressed == true && key=='o'){
+     //draws selected color in an ellipse shape when both mouse and the O key 
+     //is being pressed 
+   stroke(0); // set the stroke colour to a white
+    fill(222,183, 220); // set the fill colour to pink with transparency
+    ellipse(mouseX, mouseY, random(6), random(6));
+  }  
   // save your drawing when you press keyboard 's'
   if (keyPressed == true && key=='s') {
     saveFrame("yourName.jpg");
