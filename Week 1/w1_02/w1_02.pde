@@ -49,7 +49,7 @@ void draw() {
  
   // save your drawing when you press keyboard 's'
   if (keyPressed == true && key == 's') {
-    saveFrame("yourName.jpg");
+    saveFrame("yourName1.jpg");
   }
 
   // erase your drawing when you press keyboard 'r'
@@ -62,9 +62,7 @@ void draw() {
     if (mousePressed && keyPressed == true && key=='q'){
        fill(random(0, 255), random(0, 255), random(200, 255));
    }
-    if (mousePressed && keyPressed == true && key=='w'){
-       fill(random(0, 255), random(0, 255), random(200, 255));
-   }
+    
     rect(mouseX, mouseY, 2, 2);
 
     line(mouseX, mouseY, pmouseX, pmouseY); // pmouse is the mouse position at the previous frame
