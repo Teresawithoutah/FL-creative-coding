@@ -19,7 +19,7 @@ float clockwiseBranchX, clockwiseBranchY;
 
 void setup() {
   size(500, 500);
-  background(0);
+  background(255);
   rectMode(CENTER);  // rectangles drawn from the centre
 
   // initialise angle and inc to 0
@@ -42,8 +42,8 @@ void draw() {
 
   if (mousePressed) {
 
-    stroke(170); 
-    fill(120, 60);
+    stroke(255); 
+    fill(random(0, 255), random(0, 255), random(200, 255));
 
     rect(mouseX, mouseY, 2, 2);
 
@@ -69,7 +69,7 @@ void draw() {
     line(mouseX, mouseY, counterClockwiseBranchX, counterClockwiseBranchY);
     
     //draw randomly sized circles at the end of each branch
-    float circleSize = random(3);
+    float circleSize = random(1,7);
     ellipse(clockwiseBranchX, clockwiseBranchY, circleSize, circleSize);
     ellipse(counterClockwiseBranchX, counterClockwiseBranchY, circleSize, circleSize);
   }

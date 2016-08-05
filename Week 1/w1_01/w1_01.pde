@@ -78,7 +78,7 @@ void draw() {
   
   // save your drawing when you press keyboard 's'
   if (keyPressed == true && key=='s') {
-    saveFrame("yourname" + frameCount ".jpg");
+    saveFrame("yourname.jpg");
  // you can edit file name here ^  
 }
 
