@@ -17,9 +17,11 @@ float inc;
 float counterClockwiseBranchX, counterClockwiseBranchY;
 float clockwiseBranchX, clockwiseBranchY;
 
+color yeah = color(204, 102, 0);
+
 void setup() {
   size(500, 500);
-  background(255);
+  background(0);
   rectMode(CENTER);  // rectangles drawn from the centre
 
   // initialise angle and inc to 0
@@ -38,13 +40,31 @@ void draw() {
   inc = map(mouseX, 0, width, 0.01, 0.08);
 
   // incremment the current angle
-  angle = angle + inc;
-
+  angle = angle + inc; 
+  
+  //function doPretty 
   if (mousePressed) {
+    doPretty();
+  }
+ 
+  // save your drawing when you press keyboard 's'
+  if (keyPressed == true && key == 's') {
+    saveFrame("yourName.jpg");
+  }
 
+  // erase your drawing when you press keyboard 'r'
+  if (keyPressed == true && key == 'r') {
+    background(0);
+  }
+}
+ void doPretty(){
     stroke(255); 
-    fill(random(0, 255), random(0, 255), random(200, 255));
-
+    if (mousePressed && keyPressed == true && key=='q'){
+       fill(random(0, 255), random(0, 255), random(200, 255));
+   }
+    if (mousePressed && keyPressed == true && key=='w'){
+       fill(random(0, 255), random(0, 255), random(200, 255));
+   }
     rect(mouseX, mouseY, 2, 2);
 
     line(mouseX, mouseY, pmouseX, pmouseY); // pmouse is the mouse position at the previous frame
@@ -72,16 +92,6 @@ void draw() {
     float circleSize = random(1,7);
     ellipse(clockwiseBranchX, clockwiseBranchY, circleSize, circleSize);
     ellipse(counterClockwiseBranchX, counterClockwiseBranchY, circleSize, circleSize);
-  }
-
-
-  // save your drawing when you press keyboard 's'
-  if (keyPressed == true && key == 's') {
-    saveFrame("yourName.jpg");
-  }
-
-  // erase your drawing when you press keyboard 'r'
-  if (keyPressed == true && key == 'r') {
-    background(0);
-  }
+    
+    
 }
