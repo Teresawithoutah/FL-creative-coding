@@ -27,8 +27,8 @@ void draw() {
   background(180);
   noStroke();
 
-  int gridSize = 5;  // the number of rows and columns
-  int margin = 40; // margin between the edges of the screen and the circles
+  int gridSize = 3;  // the number of rows and columns
+  int margin = 20; // margin between the edges of the screen and the circles
 
   float gutter = 10; //distance between each cell
   float cellsize = ( width - (2 * margin) - gutter * (gridSize - 1) ) / gridSize; // size of each circle
@@ -49,16 +49,19 @@ void draw() {
 
 
 void movingCircle(float x, float y, float size, float angle) {
-
+  PVector mouse = new PVector(mouseX,mouseY);
+ 
   // calculate endpoint of the line
-  float endpointX = x + (size / 2) * cos(angle);
-  float endpointY = y + (size / 2) * sin(angle);
+  float endpointX = mouse.x + (size / 2) * cos(angle);
+  float endpointY = mouse.y + (size / 2) * sin(angle);
 
   stroke(0);
   strokeWeight(1);
   fill(140, 180);
   ellipse(x, y, size, size); // circle
 
-  stroke(255, 0, 0);
-  line(x, y, endpointX, endpointY); // red line
+
+  
+  stroke(255, 255,0 );
+  line(x, y, endpointX, endpointY); // yellow line
 }

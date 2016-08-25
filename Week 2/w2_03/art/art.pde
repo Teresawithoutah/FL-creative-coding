@@ -34,12 +34,16 @@ void draw() {
  fill(255);
  rect(random(0,500), random(0,500), random(0, 500), random(0,500));
 
-
-
 }
 
  //BLACK
  fill(0);
  rect(random(0,500), -70, random(0, 20), 1000);
+
+     // save your drawing when you press keyboard 's'
+  if (keyPressed == true && key=='s') {
+        saveFrame("piet2.jpg");
+     // you can edit file name here ^  
+    }
 
 }
