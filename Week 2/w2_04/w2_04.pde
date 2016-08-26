@@ -49,19 +49,19 @@ void draw() {
 
 
 void movingCircle(float x, float y, float size, float angle) {
-  PVector mouse = new PVector(mouseX,mouseY);
+//  PVector mouse = new PVector(mouseX,mouseY);
  
   // calculate endpoint of the line
-  float endpointX = mouse.x + (size / 2) * cos(angle);
-  float endpointY = mouse.y + (size / 2) * sin(angle);
-
-  stroke(0);
-  strokeWeight(1);
-  fill(140, 180);
+  float endpointX = x + (size / 2) * sin(angle) ;
+  float endpointY = y + (size / 2) * cos(angle);
+ 
+  stroke(255);
+  strokeWeight(9);
+  fill(random(0, 255), random(0, 255), random(200, 255));
   ellipse(x, y, size, size); // circle
 
 
   
-  stroke(255, 255,0 );
+  stroke(0);
   line(x, y, endpointX, endpointY); // yellow line
 }
