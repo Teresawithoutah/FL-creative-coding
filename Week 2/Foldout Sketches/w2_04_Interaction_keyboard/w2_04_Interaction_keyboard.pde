@@ -22,7 +22,7 @@ void setup() {
 
 
 void draw() {
-  background(backgroundValue);
+  background(244,0,0);
   noStroke();
   ellipse(150, 150, circleWidth, circleWidth);
   

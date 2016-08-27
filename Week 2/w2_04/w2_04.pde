@@ -45,6 +45,12 @@ void draw() {
       movingCircle(tx, ty, cellsize, circleNumber * TWO_PI * millis() / 60000.0);
     }
   }
+  
+   // save your drawing when you press keyboard 's'
+  if (keyPressed == true && key == 's') {
+    saveFrame("circles.jpg");
+  }
+
 }//end of draw 
 
 
