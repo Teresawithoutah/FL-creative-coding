@@ -11,6 +11,8 @@
  * You can change the background colour by holding the left mouse button and dragging.
  * 
  */
+float[] grayValueForArray;
+
 
 int     noCircles;    // the number of items in the array (# of circles)
 float[] y;      // y-position of each circle (fixed)
@@ -24,7 +26,8 @@ float blue = 120;
 void setup() {
   size(500, 500);
 
-  noCircles = 5;
+
+  noCircles = 20;
 
   // allocate space for each array
   y = new float[noCircles];
@@ -37,9 +40,16 @@ void setup() {
   //setup an initial value for each item in the array
   for (int i=0; i<noCircles; i++) {
     y[i] = gap * (i + 1);      // y is constant for each so can be calculated once
-    speed[i] = random(10);
-    phase[i] = random(TWO_PI);
+    speed[i] = random(6);
+    phase[i] = random(TWO_PI );
   }
+  
+   //Initiate Array
+   grayValueForArray = new float[noCircles];
+   //Input value into Array
+   for (int i=0; i<noCircles; i++) {
+   grayValueForArray[i] = 11*i;
+   }
 }
 
 
@@ -48,8 +58,14 @@ void draw() {
 
   for (int i=0; i<noCircles; i++) {
     // calculate the x-position of each ball based on the speed, phase and current frame
-    float x = width/2 + sin(radians(frameCount*speed[i] ) + phase[i])* 200;
+    float x = width/2 + sin(radians(frameCount*speed[i] ) + phase[i])* 55;
     ellipse(x, y[i], 20, 20);
+    fill( grayValueForArray[i] - 25, 140, 125);
+    //rgb
+  }
+  // save your drawing when you press keyboard 's'
+  if (keyPressed == true && key == 's') {
+    saveFrame("map.jpg");
   }
 }
 
